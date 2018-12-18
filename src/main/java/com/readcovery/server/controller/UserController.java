@@ -3,22 +3,13 @@ package com.readcovery.server.controller;
 import com.readcovery.server.exception.ArticleNotFoundException;
 import com.readcovery.server.exception.ResourceNotFoundException;
 import com.readcovery.server.exception.UserAuthenticationException;
-import com.readcovery.server.exception.UserTokenInvalidException;
-import com.readcovery.server.model.Article;
-import com.readcovery.server.model.History;
-import com.readcovery.server.model.User;
-import com.readcovery.server.model.UserToken;
-import com.readcovery.server.repository.ArticleRepository;
-import com.readcovery.server.repository.HistoryRepository;
-import com.readcovery.server.repository.UserRepository;
-import com.readcovery.server.repository.UserTokenRepository;
+import com.readcovery.server.model.*;
+import com.readcovery.server.repository.*;
 import com.readcovery.server.response.ReadArticleResponse;
 import com.readcovery.server.utils.PasswordUtils;
 import com.readcovery.server.utils.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +30,9 @@ public class UserController {
 
     @Autowired
     ArticleRepository articleRepository;
+
+    @Autowired
+    SaveArticleRepository saveArticleRepository;
 
     @GetMapping("{id}")
     public User getUserById(@PathVariable(value="id") Long id){
@@ -81,7 +75,7 @@ public class UserController {
         return userTokenRepository.save(newToken);
     }
 
-    @GetMapping(path = "/read/{id}")
+    @GetMapping("/read/{id}")
     public ReadArticleResponse readedArticle(
             @PathVariable long id,
             @RequestParam Map<String, String> article){
@@ -104,4 +98,30 @@ public class UserController {
 
         return response;
     }
+
+    @GetMapping("/read/save/{id}")
+    public SaveArticle saveArticle(
+            @PathVariable long id,
+            @RequestParam(value="token") String token){
+
+        long articleId = id;
+        if(!articleRepository.existsById(articleId)){
+            throw new ArticleNotFoundException(articleId);
+        }
+
+        List<UserToken> userToken = userTokenRepository.findByToken(token);
+
+        Article articleData = articleRepository.findById(articleId).orElseThrow(
+                () -> new ResourceNotFoundException("User", "id", id)
+        );
+
+        SaveArticle saveArticle = new SaveArticle(articleId, userToken.get(0).getUserId());
+        return saveArticleRepository.save(saveArticle);
+    }
+
+//    @GetMapping("save-article")
+//    public List<Article> getSaveArticle(
+//            @RequestParam(value="token") String token){
+//
+//    }
 }
