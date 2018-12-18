@@ -1,4 +1,4 @@
-# ReadCovery-Server
+# 📖🖥 ReadCovery-Server
 ReadCovery Server เป็นเซิฟเวอร์ที่ให้บริการ REST API สำหรับโปรแกรม ReadCovery มีหน้าที่จัดการระบบยืนยันตัวตนและการติดต่อกับระบบฐานข้อมูล MySQL Server
 
 ## Requirements
@@ -37,7 +37,7 @@ ReadCovery Server เป็นเซิฟเวอร์ที่ให้บ�
     java -jar ReadcoveryServer.jar
   ```
 
-## ![](https://github.com/compro-itkmitl/Bomberman/blob/master/picreadme/Human.png)Team Members
+## 👨‍👨‍👦 Team Members
 |  | ชื่อ | นามสกุล | GitHub Username | รหัสนักศึกษา |
 |--|--|--|--|--|
 | ![Fluk](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Fluke.png) | นายพงศธร| กิตติวรปัญญา | [@Phongsathron](https://github.com/Phongsathron) | 60070055 |
@@ -45,12 +45,13 @@ ReadCovery Server เป็นเซิฟเวอร์ที่ให้บ�
 | ![Gunn](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Gunn.png) | นายพุฒิเมธ | ธรรมแสง | [@jusmistic](https://github.com/jusmistic) | 60070068|
 
 
-# ![](https://github.com/compro-itkmitl/Bomberman/blob/master/picreadme/Supervisor.png)Assistant Teachers
+## 👩‍🏫 Assistant Teachers
 | ผศ.ดร. ธนิศา นุ่มนนท์  |
 | ------ |
 | ![Professor](https://github.com/Phongsathron/ReadCovery/blob/GUI/src/img/Professor.png)
 
 รายงานนี้เป็นส่วนหนึ่งของวิชา OBJECT-ORIENTED PROGRAMMING (06016317)
+
 คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
 ***
 
