@@ -125,13 +125,31 @@ public class UserController {
             @RequestParam(value="token") String token
     ){
         List<UserToken> userToken = userTokenRepository.findByToken(token);
-
         List<History> histories = historyRepository.findByUserId(userToken.get(0).getUserId());
-
         List<Article> results = new ArrayList<>();
 
         for(History history: histories){
             long articleId = history.getArticleId();
+            results.add(
+                    articleRepository.findById(articleId).orElseThrow(
+                            () -> new ArticleNotFoundException(articleId)
+                    )
+            );
+        }
+
+        return results;
+    }
+
+    @GetMapping("/save")
+    public List<Article> getSavedArticles(
+            @RequestParam(value="token") String token
+    ){
+        List<UserToken> userToken = userTokenRepository.findByToken(token);
+        List<SaveArticle> savedArticles = saveArticleRepository.findByUserId(userToken.get(0).getUserId());
+        List<Article> results = new ArrayList<>();
+
+        for(SaveArticle saveArticle: savedArticles){
+            long articleId = saveArticle.getArticleId();
             results.add(
                     articleRepository.findById(articleId).orElseThrow(
                             () -> new ArticleNotFoundException(articleId)
