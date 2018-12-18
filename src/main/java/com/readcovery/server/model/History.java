@@ -27,6 +27,8 @@ public class History {
     @CreatedDate
     private Date createdAt;
 
+    protected History(){}
+
     public History(long articleId, long userId){
         this.setArticleId(articleId);
         this.setUserId(userId);
