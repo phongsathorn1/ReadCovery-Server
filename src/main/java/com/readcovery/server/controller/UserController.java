@@ -5,6 +5,7 @@ import com.readcovery.server.exception.ResourceNotFoundException;
 import com.readcovery.server.exception.UserAuthenticationException;
 import com.readcovery.server.model.*;
 import com.readcovery.server.repository.*;
+import com.readcovery.server.response.ArticleListResponse;
 import com.readcovery.server.response.ReadArticleResponse;
 import com.readcovery.server.utils.PasswordUtils;
 import com.readcovery.server.utils.RandomString;
@@ -12,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -121,7 +124,7 @@ public class UserController {
     }
 
     @GetMapping("/history")
-    public List<Article> getHistory(
+    public ArticleListResponse getHistory(
             @RequestParam(value="token") String token
     ){
         List<UserToken> userToken = userTokenRepository.findByToken(token);
@@ -137,11 +140,11 @@ public class UserController {
             );
         }
 
-        return results;
+        return new ArticleListResponse(results);
     }
 
-    @GetMapping("/save")
-    public List<Article> getSavedArticles(
+    @GetMapping("/getsave")
+    public ArticleListResponse getSavedArticles(
             @RequestParam(value="token") String token
     ){
         List<UserToken> userToken = userTokenRepository.findByToken(token);
@@ -157,6 +160,20 @@ public class UserController {
             );
         }
 
-        return results;
+        return new ArticleListResponse(results);
+    }
+
+    @GetMapping("/category")
+    public List<String> getUserCategory(
+            @RequestParam(value="token") String token
+    ){
+        List<UserToken> userToken = userTokenRepository.findByToken(token);
+        User user = userRepository.findById(userToken.get(0).getUserId()).orElseThrow(
+                () -> new UserAuthenticationException()
+        );
+
+        List<String> categorys = Arrays.asList(user.getInterestedCategory().split(","));
+
+        return categorys;
     }
 }

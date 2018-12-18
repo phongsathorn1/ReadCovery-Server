@@ -5,6 +5,7 @@ import com.readcovery.server.model.History;
 import com.readcovery.server.model.User;
 import com.readcovery.server.model.UserToken;
 import com.readcovery.server.repository.*;
+import com.readcovery.server.response.ArticleListResponse;
 import com.readcovery.server.utils.ArticleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ public class ArticleController {
     }
 
     @GetMapping("/all")
-    public List<Article> getArticle(
+    public ArticleListResponse getArticle(
             @RequestParam(value="token") String token ){
 
         List<UserToken> userTokens = userTokenRepository.findByToken(token);
@@ -38,11 +39,11 @@ public class ArticleController {
         List<Article> articles = articleRepository.findAll();
 
         List<Article> response = ArticleUtils.getArticleNotInHistory(articles, historys);
-        return response;
+        return new ArticleListResponse(response);
     }
 
     @GetMapping("/category/{category}")
-    public List<Article> getArticleByCategory(
+    public ArticleListResponse getArticleByCategory(
             @PathVariable(value="category") String category,
             @RequestParam(value="token") String token ){
 
@@ -63,7 +64,7 @@ public class ArticleController {
 
         List<Article> response = ArticleUtils.getArticleNotInHistory(results, historys);
 
-        return response;
+        return new ArticleListResponse(response);
     }
 
 }
