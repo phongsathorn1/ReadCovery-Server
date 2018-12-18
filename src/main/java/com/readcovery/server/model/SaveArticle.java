@@ -2,7 +2,6 @@ package com.readcovery.server.model;
 
 import org.springframework.data.annotation.CreatedDate;
 
-import com.readcovery.server.model.Article;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;

@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78413145-8035-4a23-b034-b3be673f4ecc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/ArticleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/readcovery/server/utils/ArticleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/readcovery/server/utils/ArticleUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -91,10 +89,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+            <state relative-caret-position="60">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#1040#1041#0" expanded="true" />
                 <element signature="e#1069#1070#0" expanded="true" />
                 <element signature="e#1111#1112#0" expanded="true" />
@@ -400,7 +397,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545130515529" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545130650198" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -450,7 +447,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21543624" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21543624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -464,7 +461,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32867134" />
@@ -858,10 +855,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="60">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1040#1041#0" expanded="true" />
             <element signature="e#1069#1070#0" expanded="true" />
             <element signature="e#1111#1112#0" expanded="true" />
