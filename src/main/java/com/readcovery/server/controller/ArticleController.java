@@ -1,9 +1,6 @@
 package com.readcovery.server.controller;
 
-import com.readcovery.server.model.Article;
-import com.readcovery.server.model.History;
-import com.readcovery.server.model.User;
-import com.readcovery.server.model.UserToken;
+import com.readcovery.server.model.*;
 import com.readcovery.server.repository.*;
 import com.readcovery.server.response.ArticleListResponse;
 import com.readcovery.server.utils.ArticleUtils;
@@ -25,6 +22,9 @@ public class ArticleController {
     @Autowired
     HistoryRepository historyRepository;
 
+    @Autowired
+    SaveArticleRepository saveArticleRepository;
+
     static final Map<String, Integer> categoryMap = new HashMap<String, Integer>();
     static{
         categoryMap.put("political", 1);
@@ -36,9 +36,11 @@ public class ArticleController {
 
         List<UserToken> userTokens = userTokenRepository.findByToken(token);
         List<History> historys = historyRepository.findByUserId(userTokens.get(0).getUserId());
+        List<SaveArticle> saveArticles = saveArticleRepository.findByUserId(userTokens.get(0).getUserId());
         List<Article> articles = articleRepository.findAll();
 
         List<Article> response = ArticleUtils.getArticleNotInHistory(articles, historys);
+        response = ArticleUtils.getArticleNotInSave(response, saveArticles);
         return new ArticleListResponse(response);
     }
 
@@ -49,6 +51,7 @@ public class ArticleController {
 
         List<UserToken> userTokens = userTokenRepository.findByToken(token);
         List<History> historys = historyRepository.findByUserId(userTokens.get(0).getUserId());
+        List<SaveArticle> saveArticles = saveArticleRepository.findByUserId(userTokens.get(0).getUserId());
         String[] categorys = category.split(",");
         List<Article> results = new ArrayList<>();
 
@@ -63,6 +66,7 @@ public class ArticleController {
         }
 
         List<Article> response = ArticleUtils.getArticleNotInHistory(results, historys);
+        response = ArticleUtils.getArticleNotInSave(response, saveArticles);
 
         return new ArticleListResponse(response);
     }

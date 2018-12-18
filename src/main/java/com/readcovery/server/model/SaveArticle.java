@@ -25,14 +25,15 @@ public class SaveArticle {
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "create_at")
-    private Date createAt;
+    @Column(name = "created_at")
+    private Date createdAt;
 
     protected SaveArticle(){}
 
     public SaveArticle(long articleId, long userId){
         this.setArticleId(articleId);
         this.setUserId(userId);
+        this.setCreatedAt();
     }
 
     public long getId() {
@@ -55,11 +56,11 @@ public class SaveArticle {
         this.userId = userId;
     }
 
-    public Date getCreateAt() {
-        return createAt;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt() {
-        this.createAt = new Date();
+    public void setCreatedAt() {
+        this.createdAt = new Date();
     }
 }
