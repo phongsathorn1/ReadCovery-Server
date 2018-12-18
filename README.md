@@ -4,6 +4,7 @@ ReadCovery Server เป็นเซิฟเวอร์ที่ให้บ�
 ## Requirements
 - Java 1.8
 - Maven
+- MySQL or MariaDB
 
 ## Library ที่ใช้
 - [Spring Boot](http://spring.io) เป็น Framework สำหรับการทำ Web service
@@ -13,9 +14,21 @@ ReadCovery Server เป็นเซิฟเวอร์ที่ให้บ�
   ```
     git clone https://github.com/Phongsathron/ReadCovery-Server.git
   ```
+- แก้ไขการตั้งค่า MySQL ที่ไฟล์ `src/main/resources/application.properties`
+  ```
+    spring.datasource.url = jdbc:mysql://<ip or localhost>:3306/<readcovery or database name>?useSSL=false
+    spring.datasource.username = <root or username>
+    spring.datasource.password = <password>
+  ```
 - Complie ด้วยคำสั่ง
   ```
     mvn package
+  ```
+## การเตรียมฐานข้อมูล
+- ดาวน์โหลด[ไฟล์](https://github.com/oop-it-kmitl-61/ReadCovery-Server/releases/download/1.0/ReadCovery.sql)
+- ใช้คำสั่ง
+  ```
+    mysql -u <root or username> <readcovery or database name> < ReadCovery.sql
   ```
 
 ## การใช้งาน
