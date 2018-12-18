@@ -28,6 +28,9 @@ public class ArticleController {
     static final Map<String, Integer> categoryMap = new HashMap<String, Integer>();
     static{
         categoryMap.put("political", 1);
+        categoryMap.put("sport", 2);
+        categoryMap.put("entertainment", 3);
+        categoryMap.put("technology", 4);
     }
 
     @GetMapping("/all")
