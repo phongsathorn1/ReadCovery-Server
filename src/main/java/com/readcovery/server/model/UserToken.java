@@ -19,6 +19,11 @@ public class UserToken {
     @NonNull
     private String token;
 
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id",
+//            nullable = false, insertable = false, updatable = false)
+//    private User user;
+
     public long getUserId() {
         return userId;
     }
@@ -34,4 +39,12 @@ public class UserToken {
     public void setToken(String token) {
         this.token = token;
     }
+
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 }
