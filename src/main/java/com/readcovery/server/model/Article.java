@@ -22,13 +22,15 @@ public class Article {
     private String content;
 
     @NotBlank
-    private String link;
+    @Column(name = "link")
+    private String url;
 
     @NotBlank
     private long category;
 
     @NotBlank
-    private String image_url;
+    @Column(name = "image_url")
+    private String urlToImage;
 
     private Date published_at;
 
@@ -39,11 +41,11 @@ public class Article {
 
     protected Article(){}
 
-    public Article(String title, String content, String link, String image_url, Date published_at){
+    public Article(String title, String content, String url, String urlToImage, Date published_at){
         this.title = title;
         this.content = content;
-        this.link = link;
-        this.image_url = image_url;
+        this.url = url;
+        this.urlToImage = urlToImage;
         this.published_at = published_at;
     }
 
@@ -75,19 +77,19 @@ public class Article {
         this.content = content;
     }
 
-    public String getLink() {
-        return link;
+    public String getUrl() {
+        return url;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getUrlToImage() {
+        return urlToImage;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setUrlToImage(String image_url) {
+        this.urlToImage = image_url;
     }
 }

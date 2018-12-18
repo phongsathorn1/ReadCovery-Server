@@ -5,7 +5,7 @@ import com.readcovery.server.model.Article;
 import java.util.List;
 
 public class ArticleListResponse {
-    private List<Article> article;
+    private List<Article> articles;
 
     protected ArticleListResponse(){}
 
@@ -13,11 +13,11 @@ public class ArticleListResponse {
         this.setArticle(articles);
     }
 
-    public List<Article> getArticle() {
-        return article;
+    public List<Article> getArticles() {
+        return articles;
     }
 
-    public void setArticle(List<Article> article) {
-        this.article = article;
+    public void setArticle(List<Article> articles) {
+        this.articles = articles;
     }
 }
