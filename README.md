@@ -3,6 +3,8 @@ ReadCovery Server เป็นเซิฟเวอร์ที่ให้บ�
 
 ### ไฟล์ [.jar](https://github.com/oop-it-kmitl-61/ReadCovery-Server/releases/download/1.0/ReadcoveryServer-1.0-SNAPSHOT.jar) อยู่ใน release
 
+*สำหรับ ReadCovery Clien [คลิก](https://github.com/oop-it-kmitl-61/ReadCovery)*
+
 ## Requirements
 - Java 1.8
 - Maven
