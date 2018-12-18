@@ -82,7 +82,7 @@ public class UserController {
     @GetMapping("/read/{id}")
     public ReadArticleResponse readedArticle(
             @PathVariable long id,
-            @RequestParam Map<String, String> article){
+            @RequestParam Map<String, String> article ){
 
         long articleId = id;
         if(!articleRepository.existsById(articleId)){
@@ -106,7 +106,7 @@ public class UserController {
     @GetMapping("/read/save/{id}")
     public SaveArticle saveArticle(
             @PathVariable long id,
-            @RequestParam(value="token") String token){
+            @RequestParam(value="token") String token ){
 
         long articleId = id;
         if(!articleRepository.existsById(articleId)){
@@ -115,18 +115,14 @@ public class UserController {
 
         List<UserToken> userToken = userTokenRepository.findByToken(token);
 
-//        Article articleData = articleRepository.findById(articleId).orElseThrow(
-//                () -> new ResourceNotFoundException("User", "id", id)
-//        );
-
         SaveArticle saveArticle = new SaveArticle(articleId, userToken.get(0).getUserId());
         return saveArticleRepository.save(saveArticle);
     }
 
     @GetMapping("/history")
     public ArticleListResponse getHistory(
-            @RequestParam(value="token") String token
-    ){
+            @RequestParam(value="token") String token ){
+
         List<UserToken> userToken = userTokenRepository.findByToken(token);
         List<History> histories = historyRepository.findByUserId(userToken.get(0).getUserId());
         List<Article> results = new ArrayList<>();
@@ -145,8 +141,8 @@ public class UserController {
 
     @GetMapping("/getsave")
     public ArticleListResponse getSavedArticles(
-            @RequestParam(value="token") String token
-    ){
+            @RequestParam(value="token") String token ){
+
         List<UserToken> userToken = userTokenRepository.findByToken(token);
         List<SaveArticle> savedArticles = saveArticleRepository.findByUserId(userToken.get(0).getUserId());
         List<Article> results = new ArrayList<>();
@@ -165,8 +161,8 @@ public class UserController {
 
     @GetMapping("/category")
     public List<String> getUserCategory(
-            @RequestParam(value="token") String token
-    ){
+            @RequestParam(value="token") String token ){
+
         List<UserToken> userToken = userTokenRepository.findByToken(token);
         User user = userRepository.findById(userToken.get(0).getUserId()).orElseThrow(
                 () -> new UserAuthenticationException()
@@ -175,5 +171,21 @@ public class UserController {
         List<String> categorys = Arrays.asList(user.getInterestedCategory().split(","));
 
         return categorys;
+    }
+
+    @PostMapping("/category/update")
+    public User updateCategory(
+            @RequestParam(value="token") String token,
+            @RequestParam Map<String, String> body ){
+
+        List<UserToken> userToken = userTokenRepository.findByToken(token);
+        User user = userRepository.findById(userToken.get(0).getUserId()).orElseThrow(
+                () -> new UserAuthenticationException()
+        );
+
+        user.setInterestedCategory(body.get("category"));
+        User saveUser = userRepository.save(user);
+
+        return saveUser;
     }
 }

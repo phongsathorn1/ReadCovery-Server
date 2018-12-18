@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78413145-8035-4a23-b034-b3be673f4ecc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,14 +35,14 @@
         <counts>
           <entry key="dummy" value="1" />
           <entry key="gitignore" value="20" />
-          <entry key="java" value="8550" />
+          <entry key="java" value="8771" />
           <entry key="properties" value="89" />
           <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8550" />
+          <entry key="JAVA" value="8771" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="Properties" value="89" />
           <entry key="XML" value="16" />
@@ -74,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+            <state relative-caret-position="252">
+              <caret line="188" column="24" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,12 +86,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="-540">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1040#1041#0" expanded="true" />
                 <element signature="e#1069#1070#0" expanded="true" />
                 <element signature="e#1111#1112#0" expanded="true" />
@@ -261,12 +262,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/HistoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/repository/SaveArticleRepository.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/response/ArticleListResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/utils/ArticleUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -397,7 +398,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545130650198" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545134972552" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.13/mysql-connector-java-8.0.13.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -456,12 +457,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32867134" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32867134" />
@@ -792,16 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/model/History.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-128">
@@ -843,10 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="176" column="25" lean-forward="true" selection-start-line="176" selection-start-column="25" selection-end-line="176" selection-end-column="25" />
+        <state relative-caret-position="434">
+          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -855,9 +846,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/model/SaveArticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="-540">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1040#1041#0" expanded="true" />
             <element signature="e#1069#1070#0" expanded="true" />
             <element signature="e#1111#1112#0" expanded="true" />
@@ -866,6 +858,16 @@
             <element signature="e#1211#1212#0" expanded="true" />
             <element signature="e#1244#1245#0" expanded="true" />
             <element signature="e#1286#1287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/readcovery/server/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="188" column="24" selection-start-line="188" selection-start-column="24" selection-end-line="188" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
