@@ -1,6 +1,5 @@
 package com.readcovery.server;
 
-import com.readcovery.server.model.Article;
 import com.readcovery.server.repository.ArticleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
