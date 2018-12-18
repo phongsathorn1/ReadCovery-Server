@@ -9,9 +9,7 @@ import com.readcovery.server.utils.ArticleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/article")
@@ -48,17 +46,22 @@ public class ArticleController {
             @PathVariable(value="category") String category,
             @RequestParam(value="token") String token ){
 
-        long categoryId = -1;
-
-        if(categoryMap.containsKey(category)) {
-            categoryId = categoryMap.get(category.toLowerCase());
-        }
-
         List<UserToken> userTokens = userTokenRepository.findByToken(token);
         List<History> historys = historyRepository.findByUserId(userTokens.get(0).getUserId());
-        List<Article> articles = articleRepository.findByCategory(categoryId);
+        String[] categorys = category.split(",");
+        List<Article> results = new ArrayList<>();
 
-        List<Article> response = ArticleUtils.getArticleNotInHistory(articles, historys);
+        for(String categorysItem: categorys){
+            long categoryId = -1;
+            if(categoryMap.containsKey(categorysItem)) {
+                categoryId = categoryMap.get(categorysItem.toLowerCase());
+
+                List<Article> articles = articleRepository.findByCategory(categoryId);
+                results.addAll(articles);
+            }
+        }
+
+        List<Article> response = ArticleUtils.getArticleNotInHistory(results, historys);
 
         return response;
     }
