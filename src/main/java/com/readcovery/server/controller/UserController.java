@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -111,17 +112,33 @@ public class UserController {
 
         List<UserToken> userToken = userTokenRepository.findByToken(token);
 
-        Article articleData = articleRepository.findById(articleId).orElseThrow(
-                () -> new ResourceNotFoundException("User", "id", id)
-        );
+//        Article articleData = articleRepository.findById(articleId).orElseThrow(
+//                () -> new ResourceNotFoundException("User", "id", id)
+//        );
 
         SaveArticle saveArticle = new SaveArticle(articleId, userToken.get(0).getUserId());
         return saveArticleRepository.save(saveArticle);
     }
 
-//    @GetMapping("save-article")
-//    public List<Article> getSaveArticle(
-//            @RequestParam(value="token") String token){
-//
-//    }
+    @GetMapping("/history")
+    public List<Article> getHistory(
+            @RequestParam(value="token") String token
+    ){
+        List<UserToken> userToken = userTokenRepository.findByToken(token);
+
+        List<History> histories = historyRepository.findByUserId(userToken.get(0).getUserId());
+
+        List<Article> results = new ArrayList<>();
+
+        for(History history: histories){
+            long articleId = history.getArticleId();
+            results.add(
+                    articleRepository.findById(articleId).orElseThrow(
+                            () -> new ArticleNotFoundException(articleId)
+                    )
+            );
+        }
+
+        return results;
+    }
 }

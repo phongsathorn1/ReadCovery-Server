@@ -21,17 +21,10 @@ public class ArticleController {
     ArticleRepository articleRepository;
 
     @Autowired
-    UserRepository userRepository;
-
-    @Autowired
     UserTokenRepository userTokenRepository;
 
     @Autowired
     HistoryRepository historyRepository;
-
-    @Autowired
-    SaveArticleRepository saveArticleRepository;
-
 
     static final Map<String, Integer> categoryMap = new HashMap<String, Integer>();
     static{
